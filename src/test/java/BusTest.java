@@ -10,7 +10,7 @@ public class BusTest {
 
     @Before
     public void setup(){
-        bus = new Bus("Wuhan", 2);
+        bus = new Bus("Wuhan", 20);
     }
 
     @Test
@@ -21,11 +21,14 @@ public class BusTest {
     @Test
     public void canAddPassenger(){
         bus.addPassenger(person);
-        bus.addPassenger(person);
-        bus.addPassenger(person);
         assertEquals(1, bus.countPassengers());
     }
 
-
+    @Test
+    public void canRemovePassenger(){
+        bus.addPassenger(person);
+        bus.removePassenger();
+        assertEquals(0, bus.countPassengers());
+    }
 
 }
